@@ -1,0 +1,6 @@
+openai
+streamlit
+ChatOpenAI
+PromptTemplate
+tempfile
+io
