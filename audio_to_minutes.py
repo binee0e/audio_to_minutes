@@ -55,7 +55,8 @@ if uploaded_file is not None:
                         """
                 prompt_sum= PromptTemplate.from_template(my_tem_sum)
                 sum_a=prompt_sum.format(info=i)
-                llm_sum = ChatOpenAI(temperature=0.7,max_tokens=1000,model_name='gpt-3.5-turbo',openai_api_key='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')
+                llm_sum = ChatOpenAI(temperature=0.7,max_tokens=1000,model_name='gpt-3.5-turbo',
+                                        openai_api_key = st.secrets["OPENAI_API_KEY"])
                 sum_list2.append(llm_sum.predict(sum_a))
                 summary='\n\n\n'.join(sum_list2)
         st.session_state['sum'].append(summary)
